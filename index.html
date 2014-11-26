@@ -1,0 +1,45 @@
+<!--
+
+Intro to AngularJS
+by Elin Nilsson
+@hejelinnilsson
+
+-->
+
+<!DOCTYPE html>
+<html ng-app="meetupApp">
+<head>
+	<title>Intro to AngularJS</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+	<div ng-init="speakers = ['Anna', 'Elin', 'Emil', 'Mattias', 'Micke']">
+		<h1>Umedev meetup 27/11</h1>
+		<input type="text" ng-model="searchText" /><br/>
+
+		<br />
+		<h2>Speakers</h2>
+		<ul ng-repeat="speaker in speakers | filter:searchText">
+			<li>{{speaker}}</li>
+		</ul>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('meetupApp', []);
+
+		app.controller('mainController', function($scope) {
+			$scope.speakers = [
+				{"name":"Anna", "topic":"Conversion", "startsAt":"18:00"},
+				{"name":"Elin", "topic":"AngularJS", "startsAt":"18:20"},
+				{"name":"Emil", "topic":"Workflows", "startsAt":"19:00"},
+				{"name":"Mattias", "topic":"Animation", "startsAt":"19:20"},
+				{"name":"Micke", "topic":"Webcomponents", "startsAt":"19:50"}
+			];
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+body {
+	background: #eee;
+	font-family: roboto;
+	font-size: 18px;
+	padding: 25px;
+	color: #202020;
+}
+
+input {
+	font-size: 18px;
+	padding: 10px;
+}
