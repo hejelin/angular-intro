@@ -7,3 +7,24 @@ $scope.speakers = [
 ];
 
 
+
+app.config(function ($routeProvider) {
+	$routeProvider
+        .when('/all', 
+            {
+                controller: 'mainController',
+                templateUrl: 'all.html'
+            })
+        .when('/contact',
+            {
+            	controller: 'mainController',
+            	templateUrl: 'contact.html'
+            })
+    	.otherwise({ redirectTo: '/all' });
+});
+
+
+
+$scope.addSpeaker = function() {
+	$scope.speakers.push({"name": $scope.newSpeaker.name, "topic": $scope.newSpeaker.topic , "startsAt": $scope.newSpeaker.startsAt });
+}

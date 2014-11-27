@@ -1,0 +1,16 @@
+<a href="#/contact">See contact info</a><br /><br />
+
+<label>Search:</label> <input type="text" ng-model="searchText" /><br/>
+
+<h2>Speakers</h2>
+<ul ng-repeat="speaker in speakers | filter:searchText">
+	<li>{{speaker.name}}</li>
+</ul>
+
+<label>Name</label><br>
+<input ng-model="newSpeaker.name" type="text" /><br><br>
+<label>Topic</label><br>
+<input ng-model="newSpeaker.topic" type="text" /><br><br>
+<label>Starts at</label><br>
+<input ng-model="newSpeaker.startsAt" type="text" /><br><br>
+<input type="submit" ng-click="addSpeaker()" />
